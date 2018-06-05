@@ -57,11 +57,15 @@ class That {
    * https://tc39.github.io/ecma262/#sec-isarray
    */
   static isArray(x: any): x is any[] {
-    return Array.isArray
-      ? Array.isArray(x)
-      : x instanceof Object
-        ? x instanceof Array
-        : _toStr.call(x) === "[object Array]";
+    if (Array.isArray) {
+      return Array.isArray(x);
+    } else {
+      if (x instanceof Object) {
+        return x instanceof Array;
+      } else {
+        return _toStr.call(x) === "[object Array]";
+      }
+    }
   }
 
   /**

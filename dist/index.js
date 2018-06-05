@@ -43,11 +43,17 @@ var That = /** @class */ (function () {
      * https://tc39.github.io/ecma262/#sec-isarray
      */
     That.isArray = function (x) {
-        return Array.isArray
-            ? Array.isArray(x)
-            : x instanceof Object
-                ? x instanceof Array
-                : _toStr.call(x) === "[object Array]";
+        if (Array.isArray) {
+            return Array.isArray(x);
+        }
+        else {
+            if (x instanceof Object) {
+                return x instanceof Array;
+            }
+            else {
+                return _toStr.call(x) === "[object Array]";
+            }
+        }
     };
     /**
      * Check if x is a number
