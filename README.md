@@ -1,5 +1,7 @@
 # that-is
 
+[![Build Status](https://travis-ci.org/banxi1988/that-is.svg?branch=master)](https://travis-ci.org/banxi1988/that-is)
+
 A Set of Utility method for to check isArray,isNumber,isObject,isInteger,isCallable etc
 
 ## Installation
